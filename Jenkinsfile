@@ -11,7 +11,7 @@ pipeline {
         }
         stage ( "install pacakges") {
             steps {
-               bat  "npm ci"
+               bat  "npm install"
             }
         }
         stage ("test") {

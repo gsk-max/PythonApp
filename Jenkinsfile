@@ -9,11 +9,11 @@ pipeline {
                 checkout scm
             }
         }
-        stage ( "install pacakges") {
-            steps {
-               bat  "npm install"
-            }
-        }
+        stage('Install Packages') {
+    steps {
+        bat 'python -m pip install -r requirements.txt'
+    }
+}
         stage ("test") {
             steps {
                     bat "npx ng text --no-watch --no-progress --browser=Chromeheadless"
